@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecurePass</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 360px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #090d16;
+      color: #e2e8f0;
+      font-size: 13px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #10b981;
+      letter-spacing: 0.5px;
+    }
+    .credit {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .field {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px 10px;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #f8fafc;
+      font-family: monospace;
+      font-size: 12px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #10b981;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: #10b981;
+      color: #020617;
+      margin-top: 4px;
+    }
+    .btn-primary:hover {
+      background: #34d399;
+    }
+    .btn-secondary {
+      background: #1e293b;
+      color: #cbd5e1;
+      margin-top: 6px;
+    }
+    .btn-secondary:hover {
+      background: #334155;
+    }
+    .output-box {
+      margin-top: 14px;
+      padding: 10px;
+      background: #020617;
+      border: 1px solid #10b981;
+      border-radius: 8px;
+      display: none;
+    }
+    .output-pass {
+      font-family: monospace;
+      font-size: 13px;
+      word-break: break-all;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+    .notice {
+      margin-top: 12px;
+      font-size: 10px;
+      color: #64748b;
+      line-height: 1.4;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">SecurePass</div>
+    <div class="credit">Developed by Mohit Prajapati</div>
+  </div>
+
+  <div class="field">
+    <label for="secret">Master Secret</label>
+    <input type="password" id="secret" placeholder="Your master passphrase">
+  </div>
+
+  <div class="field">
+    <label for="site">Website / Identifier (Optional)</label>
+    <input type="text" id="site" placeholder="e.g. github.com (leave blank for default)">
+  </div>
+
+  <div class="row">
+    <div class="field" style="flex: 1;">
+      <label for="length">Length</label>
+      <select id="length">
+        <option value="12">12 chars</option>
+        <option value="16" selected>16 chars</option>
+        <option value="20">20 chars</option>
+        <option value="24">24 chars</option>
+        <option value="32">32 chars</option>
+      </select>
+    </div>
+    <div class="field" style="flex: 1.5;">
+      <label for="profile">Profile</label>
+      <select id="profile">
+        <option value="full" selected>Full (Symbols)</option>
+        <option value="alphanumeric">Alphanumeric</option>
+        <option value="symbols_safe">Safe Symbols</option>
+        <option value="pin">PIN</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" id="btn-generate">Generate Password</button>
+
+  <div class="output-box" id="output-box">
+    <div class="output-pass" id="output-pass"></div>
+    <button class="btn btn-secondary" id="btn-copy">Copy to Clipboard</button>
+  </div>
+
+  <div class="notice">
+    Processed 100% locally with Web Crypto. Zero database. No data transmitted.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGlow)" stroke="url(#cyberGrad)" stroke-width="4" />
+
+  <!-- Abstract Cybersecurity Portrait Silhouette -->
+  <!-- Shoulders -->
+  <path d="M 45 165 C 45 135, 70 120, 100 120 C 130 120, 155 135, 155 165 Z" fill="#1e293b" />
+  
+  <!-- Cyber collar accent -->
+  <path d="M 75 140 L 100 155 L 125 140" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Head -->
+  <circle cx="100" cy="85" r="32" fill="#334155" />
+
+  <!-- Cyber visor / glasses line -->
+  <path d="M 80 82 Q 100 86 120 82" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Shield overlay node -->
+  <path d="M 100 45 L 115 52 L 115 65 Q 100 75 100 78 Q 100 75 85 65 L 85 52 Z" fill="none" stroke="#10b981" stroke-width="2" />
+</svg>

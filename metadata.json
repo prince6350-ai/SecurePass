@@ -1,0 +1,6 @@
+{
+  "name": "SecurePass — Deterministic Password Generator",
+  "description": "Privacy-first deterministic password generator developed by Prince Kumar. Zero database, zero history, cryptographic PBKDF2-HMAC-SHA256 generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
